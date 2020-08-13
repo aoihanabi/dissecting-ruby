@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 10.times do |b|
   Blog.create!(
-    title: "My Blog Post #{b}"
+    title: "My Blog Post #{b}",
     body: "Sed ut perspiciatis unde omnis iste natus 
     rror sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo 
     inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem 
@@ -18,7 +18,7 @@ puts "10 Blogs created."
 
 5.times do |skill|
   Skill.create!(
-    title: "Rails #{skill}"
+    title: "Rails #{skill}",
     percent_utilized: 15
   )
 end
