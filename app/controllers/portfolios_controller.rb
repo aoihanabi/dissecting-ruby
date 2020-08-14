@@ -23,12 +23,11 @@ class PortfoliosController < ApplicationController
   #Renders the view for the specified item and puts all
   #the info inside the fields to be edited
   def edit
-    @portf_items = Portfolio.find(params[:id]);
-
+    @portf_items = Portfolio.find(params[:id])
   end
   #Writes de changes into the DB
   def update 
-    @portf_items = Portfolio.find(params[:id]);
+    @portf_items = Portfolio.find(params[:id])
     
     respond_to do |format|
       if @portf_items.update(params.require(:portfolio).permit(:title,:subtitle,:body))
@@ -36,6 +35,6 @@ class PortfoliosController < ApplicationController
       else
         format.html {render :edit }
       end
+    end
   end
-
 end
