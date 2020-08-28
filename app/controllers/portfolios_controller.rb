@@ -14,7 +14,7 @@ class PortfoliosController < ApplicationController
   end
   #Creates de item into the DB
   def create 
-    @portf_items = Portfolio.new(params.require(:portfolio).permit(:title, :subtitle, :body, :technologies_attributes [:name]))
+    @portf_items = Portfolio.new(params.require(:portfolio).permit(:title, :subtitle, :body, technologies_attributes: [:name]))
 
     respond_to do |format|
       if @portf_items.save
