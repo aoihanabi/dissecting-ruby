@@ -10,10 +10,11 @@ class PortfoliosController < ApplicationController
   #Renders the view
   def new
     @portf_items = Portfolio.new
+    3.times {@portf_items.technologies.build}
   end
   #Creates de item into the DB
   def create 
-    @portf_items = Portfolio.new(params.require(:portfolio).permit(:title, :subtitle, :body))
+    @portf_items = Portfolio.new(params.require(:portfolio).permit(:title, :subtitle, :body, :technologies_attributes [:name]))
 
     respond_to do |format|
       if @portf_items.save
