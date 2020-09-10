@@ -14,7 +14,7 @@ class PortfoliosController < ApplicationController
   end
   #Creates de item into the DB
   def create 
-    @portf_items = Portfolio.new(params.require(:portfolio).permit(:title, :subtitle, :body, technologies_attributes: [:name]))
+    @portf_items = Portfolio.new(portfolio_params)
 
     respond_to do |format|
       if @portf_items.save
@@ -35,7 +35,7 @@ class PortfoliosController < ApplicationController
     @portf_items = Portfolio.find(params[:id])
     
     respond_to do |format|
-      if @portf_items.update(params.require(:portfolio).permit(:title,:subtitle,:body))
+      if @portf_items.update(portfolio_params)
         format.html { redirect_to portfolios_path, notice: "Record successfully updated" }
       else
         format.html {render :edit }
@@ -56,5 +56,13 @@ class PortfoliosController < ApplicationController
     respond_to do |format|
       format.html { redirect_to portfolios_url, notice: 'Record was removed'}
     end
+  end
+
+  private 
+  def portfolio_params
+    params.require(:portfolio).permit(:title, 
+                                      :subtitle, 
+                                      :body, 
+                                      technologies_attributes: [:name])
   end
 end
