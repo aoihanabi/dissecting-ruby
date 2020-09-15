@@ -12,7 +12,7 @@ class PortfoliosController < ApplicationController
   #Renders the view
   def new
     @portf_items = Portfolio.new
-    3.times {@portf_items.technologies.build}
+    3.times { @portf_items.technologies.build }
   end
   #Creates de item into the DB
   def create 
@@ -31,6 +31,7 @@ class PortfoliosController < ApplicationController
   #the info inside the fields to be edited
   def edit
     @portf_items = Portfolio.find(params[:id])
+    3.times { @portf_items.technologies.build }
   end
   #Writes de changes into the DB
   def update 
