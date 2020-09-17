@@ -1,6 +1,6 @@
 class PortfoliosController < ApplicationController
   layout 'portfolio'
-
+  before_action :set_portfolio_item, only [:edit, :update, :show, :destroy]
   def index
     @portf_items = Portfolio.all
   end
@@ -16,8 +16,6 @@ class PortfoliosController < ApplicationController
   end
   #Creates de item into the DB
   def create 
-    @portf_items = Portfolio.new(portfolio_params)
-
     respond_to do |format|
       if @portf_items.save
         format.html{redirect_to portfolios_path, notice: "Your Portfolio has been created successfully"}
@@ -30,13 +28,10 @@ class PortfoliosController < ApplicationController
   #Renders the view for the specified item and puts all
   #the info inside the fields to be edited
   def edit
-    @portf_items = Portfolio.find(params[:id])
     3.times { @portf_items.technologies.build }
   end
   #Writes de changes into the DB
   def update 
-    @portf_items = Portfolio.find(params[:id])
-    
     respond_to do |format|
       if @portf_items.update(portfolio_params)
         format.html { redirect_to portfolios_path, notice: "Record successfully updated" }
@@ -47,12 +42,9 @@ class PortfoliosController < ApplicationController
   end
 
   def show
-    @portf_items = Portfolio.find(params[:id])
   end
 
   def destroy
-    #This will lookup the object i wanna distroy with the id params
-    @portf_items = Portfolio.find(params[:id])
     #Destroy/delete the record
     @portf_items.destroy
     #Redirect
@@ -67,5 +59,10 @@ class PortfoliosController < ApplicationController
                                       :subtitle, 
                                       :body, 
                                       technologies_attributes: [:name])
+  end
+
+  def set_portfolio_item
+    #This will lookup the object i wanna distroy with the id params
+    @portf_items = Portfolio.find(params[:id])
   end
 end
