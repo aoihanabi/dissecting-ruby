@@ -12,8 +12,11 @@ module ApplicationHelper
   def source_helper(layout_name)
     if session[:source]
       greeting = "Thanks for visiting from #{session[:source]} and you're on #{layout_name} layout"
-      content_tag(:p, greeting, class: "source-greeting")
-      
+      content_tag(:p, greeting, class: "source-greeting")      
     end
+  end
+
+  def copyright_generator
+    AoiViewTool::Renderer.copyright 'Abigail Campos', 'All rights reserved'
   end
 end
