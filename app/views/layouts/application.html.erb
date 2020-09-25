@@ -4,7 +4,7 @@
     <title><%= @page_title %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="keywords" content="<%= @seo_keywords%>"/>
@@ -14,17 +14,24 @@
   </head>
 
   <body>
-    <p class = "notice"><%= notice %></p>
-    <p class = "alert"><%= alert %></p>
+    <div class="site-wrapper">
 
-    <%= render "shared/nav", location: 'top' %>
+      <div class="site-wrapper-inner">
 
-    <%= login_helper %>
+        <div class="cover-container">
 
-    <%= yield %>
-    
-    <%= copyright_generator %>    
+          <%= #render "shared/nav", location: 'top' %>
+          <%= render "shared/application_nav" %>
 
-    <%= source_helper("application") %>
+          <%= login_helper %>
+
+          <%= yield %>
+          
+          <%= copyright_generator %>    
+
+          <%= source_helper("application") %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
