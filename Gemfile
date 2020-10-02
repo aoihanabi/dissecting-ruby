@@ -47,8 +47,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'friendly_id', '~> 5.4.0'
 gem 'devise', '~> 4.7', '>= 4.7.2'
-gem 'bootstrap', '~> 4.4.1'
-gem 'jquery-rails'
 gem 'aoi_view_tool', git: 'https://github.com/aoihanabi/ruby_custom_gem'
 gem 'petergate', '~> 2.0', '>= 2.0.1'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
