@@ -1,7 +1,7 @@
 class PortfoliosController < ApplicationController
   before_action :set_portfolio_item, only: [:edit, :update, :show, :destroy]
   layout 'portfolio'
-  access all: [:show, :index, :angular], user: {except: [:destroy, :new, :creat, :update, :edit]}, site_admin: :all
+  access all: [:show, :index, :angular], user: {except: [:destroy, :new, :creat, :update, :edit, :sort]}, site_admin: :all
 
   def index
     @portf_items = Portfolio.by_position
@@ -22,6 +22,7 @@ class PortfoliosController < ApplicationController
     @portf_items = Portfolio.new
     3.times { @portf_items.technologies.build }
   end
+  
   #Creates de item into the DB
   def create 
     respond_to do |format|
