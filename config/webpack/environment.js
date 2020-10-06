@@ -13,5 +13,8 @@ const aliasConfig = {
   'jquery-ui': 'jquery-ui-dist/jquery-ui.js'
 };
 
+const coffee = require('./loaders/coffee')
+
 environment.config.set('resolve.alias', aliasConfig);
+environment.loaders.prepend('coffee', coffee)
 module.exports = environment
