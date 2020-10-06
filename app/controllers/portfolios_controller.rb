@@ -5,7 +5,12 @@ class PortfoliosController < ApplicationController
 
   def index
     @portf_items = Portfolio.by_position
+  end
 
+  def sort
+    params[:order].each do |key, value|
+      Portfolio.find(value[:id]).update(position: value[:position])
+    end
   end
 
   def angular
