@@ -1,7 +1,7 @@
 class PortfoliosController < ApplicationController
   before_action :set_portfolio_item, only: [:edit, :update, :show, :destroy]
   layout 'portfolio'
-  access all: [:show, :index, :angular], user: {except: [:destroy, :new, :creat, :update, :edit, :sort]}, site_admin: :all
+  access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :update, :edit, :sort]}, site_admin: :all
 
   def index
     @portf_items = Portfolio.by_position
@@ -25,6 +25,8 @@ class PortfoliosController < ApplicationController
   
   #Creates de item into the DB
   def create 
+    @portf_items = Portfolio.new(portfolio_params)
+
     respond_to do |format|
       if @portf_items.save
         format.html{redirect_to portfolios_path, notice: "Your Portfolio has been created successfully"}
@@ -66,7 +68,9 @@ class PortfoliosController < ApplicationController
   def portfolio_params
     params.require(:portfolio).permit(:title, 
                                       :subtitle, 
-                                      :body, 
+                                      :body,
+                                      :main_image, 
+                                      :thumb_image,
                                       technologies_attributes: [:name])
   end
 
