@@ -10,9 +10,9 @@
     title: 'Topic #{topic}'
   )
 end
-puts "Three topics created"
+puts "3 topics created"
 
-10.times do |b|
+5.times do |b|
   Blog.create!(
     title: "My Blog Post #{b}",
     body: "Sed ut perspiciatis unde omnis iste natus 
@@ -22,7 +22,7 @@ puts "Three topics created"
     topic_id: Topic.last.id
   )
 end
-puts "10 Blogs created."
+puts "5 Blogs created."
 
 5.times do |skill|
   Skill.create!(
@@ -32,7 +32,7 @@ puts "10 Blogs created."
 end
 puts "5 Skills created."
 
-8.times do |portfolio_item|
+3.times do |portfolio_item|
   Portfolio.create!(
     title: "Portfolio #{portfolio_item}",
     subtitle: "Ruby on Rails",
@@ -42,9 +42,9 @@ puts "5 Skills created."
     thumb_image: "https://via.placeholder.com/350x200"
   )
 end 
-puts "8 Portfolios created."
+puts "3 Portfolios created."
 
-1.times do |portfolio_item|
+3.times do |portfolio_item|
   Portfolio.create!(
     title: "Portfolio #{portfolio_item}",
     subtitle: "Angular",
@@ -54,7 +54,7 @@ puts "8 Portfolios created."
     thumb_image: "https://via.placeholder.com/350x200"
   )
 end 
-puts "8 Portfolios created."
+puts "3 Portfolios created."
 
 3.times do |tech|
   Portfolio.last.technologies.create!(
