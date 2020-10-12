@@ -10,6 +10,8 @@ require("@rails/activestorage").start()
 require("channels")
 
 require("jquery-ui");
+require("jquery")
+require("@nathanvda/cocoon")
 require("packs/html5.sortable")
 require("packs/portfolios.coffee")
 

@@ -20,7 +20,6 @@ class PortfoliosController < ApplicationController
   #Renders the view
   def new
     @portf_items = Portfolio.new
-    3.times { @portf_items.technologies.build }
   end
   
   #Creates de item into the DB
@@ -39,8 +38,8 @@ class PortfoliosController < ApplicationController
   #Renders the view for the specified item and puts all
   #the info inside the fields to be edited
   def edit
-    3.times { @portf_items.technologies.build }
   end
+
   #Writes de changes into the DB
   def update 
     respond_to do |format|
@@ -71,7 +70,7 @@ class PortfoliosController < ApplicationController
                                       :body,
                                       :main_image, 
                                       :thumb_image,
-                                      technologies_attributes: [:name])
+                                      technologies_attributes: [:id, :name, :_destroy])
   end
 
   def set_portfolio_item
