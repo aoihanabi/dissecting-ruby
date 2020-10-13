@@ -1,7 +1,0 @@
-<% if flash[:alert] %>
-  <%= js add_gritter(flash[:alert],  class_name: "custom_gritter", stiky: false) %>
-<% elsif flash[:error] %>
-  <%= js add_gritter(flash[:error], class_name: "custom_gritter", stiky: false) %>
-<% else %>
-  <%= js add_gritter(flash[:notice], class_name: "custom_gritter", stiky: false) %>
-<% end %>

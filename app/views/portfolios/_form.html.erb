@@ -2,7 +2,7 @@
 <%= form_for(@portf_items) do |f| %>
   <% if @portf_items.errors.any? %>
     <% @portf_items.errors.full_messages.each do |error| %>
-      <%= js add_gritter(error, class_name: "custom_gritter", stiky: false) %>
+      <%= alert_generator error %>
     <% end %>
   <% end %>
   <div class="row">
