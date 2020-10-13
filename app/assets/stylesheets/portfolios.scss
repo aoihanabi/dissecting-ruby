@@ -1,4 +1,6 @@
 @import "bootstrap/scss/bootstrap";
+@import "gritter";
+
 :root {
   --jumbotron-padding-y: 3rem;
 }
@@ -45,4 +47,12 @@ footer p {
  */
 .portfolio-container {
   padding: 30px;   
+}
+
+.custom_gritter {
+  background-color: rgba(52, 58, 54, 0.95);
+  color: black;
+  border-radius: 5px;
+  text-align: center;
+  border: 1px solid white;
 }

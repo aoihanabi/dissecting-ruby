@@ -1,5 +1,6 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome";
+@import "gritter";
 
 /*
  * Globals
@@ -175,3 +176,10 @@ h6, .h6 {
  .social-links li {
   font-size: 2.5em;
  }
+
+ .custom_gritter {
+  background-color: rgba(52, 58, 54, 0.8);
+  border-radius: 5px;
+  text-align: center;
+  border: 1px solid white;
+}

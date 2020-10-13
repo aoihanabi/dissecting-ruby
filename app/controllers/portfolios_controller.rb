@@ -5,6 +5,7 @@ class PortfoliosController < ApplicationController
 
   def index
     @portf_items = Portfolio.by_position
+    puts :notice
   end
 
   def sort

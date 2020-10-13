@@ -1,5 +1,10 @@
 <!--"form_for" actually maps each attribute into the corresponding fields right away, for example when we want to edit fields-->
 <%= form_for(@portf_items) do |f| %>
+  <% if @portf_items.errors.any? %>
+    <% @portf_items.errors.full_messages.each do |error| %>
+      <%= js add_gritter(error, class_name: "custom_gritter", stiky: false) %>
+    <% end %>
+  <% end %>
   <div class="row">
     <div class="col-md-6">
       <div class="form-group">

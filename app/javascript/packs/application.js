@@ -9,10 +9,13 @@ require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
 
-require("jquery-ui");
+require("jquery-ui")
 require("jquery")
-require("@nathanvda/cocoon")
+window.jQuery = $;
+window.$ = $;
 require("packs/html5.sortable")
+require("@nathanvda/cocoon")
+require("gritter/js/jquery.gritter.js")
 require("packs/portfolios.coffee")
 
 // Uncomment to copy all static images under ../images to the output folder and reference
