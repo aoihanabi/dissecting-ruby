@@ -57,3 +57,4 @@ gem 'carrierwave-aws', '~> 1.5'
 gem 'dotenv-rails', '~> 2.7', '>= 2.7.6'
 gem 'cocoon', '~> 1.2', '>= 1.2.15'
 gem "gritter", "1.2.0"
+gem 'redis', '~> 4.2', '>= 4.2.2'
