@@ -12,7 +12,13 @@
   <div class="form-group">
     <%= form.text_area :body, class: 'form-control', rows: 15, placeholder: 'Content' %>
   </div>
+  
+  <label>Status:</label><br>
 
+  <label class="radio-inline"><input type="radio" name="optradio" checked>Public</label>&nbsp;&nbsp;
+  
+  <label class="radio-inline"><input type="radio" name="optradio">Draft</label>
+  
   <div class="form-group">
     <%= form.submit "Submit", class: 'btn btn-primary' %>
   </div>
