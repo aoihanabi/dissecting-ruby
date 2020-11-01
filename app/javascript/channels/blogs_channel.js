@@ -8,7 +8,7 @@ $(document).on('turbolinks:load', function() {
 
   var global_chat =
   consumer.subscriptions.create({
-    channel: "TestChannel",
+    channel: "BlogsChannel",
     blog_id: $('#comments').attr('data-blog-id')
   },
   {
