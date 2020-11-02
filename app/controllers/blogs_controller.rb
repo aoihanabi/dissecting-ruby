@@ -6,13 +6,15 @@ class BlogsController < ApplicationController
 
   # GET /blogs
   # GET /blogs.json
-  def index
+  def index    
     if logged_in?(:site_admin)
       @blogs = Blog.recent.page(params[:page]).per(5)
     else
-      @blogs = Blog.published.recent.page(params[:page]).per(5)  
+      @blogs = Blog.published.recent.page(params[:page]).per(5)
+      if not @blogs.present?
+        flash.now[:notice] = 'No blogs published yet'
+      end
     end
-    
     @page_title = "My Portfolio Blog"
   end
 
@@ -26,7 +28,7 @@ class BlogsController < ApplicationController
       @page_title = @blog.title
       @seo_keywords = @blog.body
     else
-      redirect_to blogs_path, notice: "You're not authorized to access this page"
+      
     end
   end
 

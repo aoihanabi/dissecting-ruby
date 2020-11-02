@@ -4,8 +4,8 @@ class PortfoliosController < ApplicationController
   access all: [:show, :index, :angular], user: {except: [:destroy, :new, :create, :update, :edit, :sort]}, site_admin: :all
 
   def index
+    flash.now[:notice] = "We have exactly 0 books available."
     @portf_items = Portfolio.by_position
-    puts :notice
   end
 
   def sort
