@@ -1,26 +1,10 @@
-# README
+# Portfolio WebApp
 
->>I learned to add quotes here
+This is a website to showcase information about me and my professional experience, skills and projects I have worked on or that I am currently working on, it also has a blog where I can share about relevant topics I'm learning, the blog includes a live comment section using action cable.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This website was developed as a project for the course Dissecting Ruby on Rails 5 by Jordan Hudgens on Udemy.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Technologies Used:
+*  Ruby on Rails 6
+*  Ruby 2.7.0
+*  Postgresql 12
