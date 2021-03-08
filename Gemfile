@@ -61,4 +61,4 @@ gem 'redis', '~> 4.2', '>= 4.2.2'
 gem 'redcarpet', '~> 3.5'
 gem 'coderay', '~> 1.1', '>= 1.1.3'
 
-ruby "2.7.0"
+ruby "2.6.6"
