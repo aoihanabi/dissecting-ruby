@@ -5,20 +5,23 @@
     </div>
     <div class="col-md-5">
       <h1><%= @portf_items.title%></h1>
-      <hr>
+      
       <em><%= @portf_items.subtitle %></em>
-
+      <hr>
       <p><%= @portf_items.body %></p>
 
       <h3>Technologies Used:</h3>
 
-      <%= @portf_items.technologies.each do |t| %>
-        <p><%= t.name %></p>
-      <% end %>
+      <div>
+        <% @portf_items.technologies.each do |t| %>
+          <p><%= t.name %></p>
+        <% end %>
+      </div>
 
       <% if logged_in?(:site_admin) %>
         <div>
-          <%=  link_to "Edit Item", edit_portfolio_path(@portf_items), class: 'btn btn_warning btn_block' %>
+          <%=  link_to "Edit Item", edit_portfolio_path(@portf_items), class: 'btn btn-warning btn-block' %>
+          <%=  link_to "Delete Item", delete_portfolio_path(@portf_items), class: 'btn btn-warning btn-block' %>
         </div>
       <% end %>
     </div>

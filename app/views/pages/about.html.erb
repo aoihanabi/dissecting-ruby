@@ -1,11 +1,11 @@
 <div class="app-card-container">
-  <div class="card box-shadow">
+  <div class="card box-shadow" style="height:565px; overflow-y:auto;">
 
     <h2 class="card-title">About Me</h2>
     <hr>
     <div class="row">
-      <div class="col-md-4 my-auto">
-        <%= image_tag "thumb-1920-838010.jpg", width:'100%', alt: "profile image", class:'profile-img' %>
+      <div class="col-md-4 my-3">
+        <%= image_tag "profile_pic.jpg", width:'100%', alt: "profile image", class:'profile-img' %>
 
         <div class="skills">
           <% @skills.each do |skill| %>
@@ -26,25 +26,43 @@
         </div>
 
       </div>
+      <%# Welcome! My name is Abigail, I'm a software developer who enjoys being able to bring ideas to life, and help others boost their projects. 
+      
+      Welcome! My name is Abigail, I'm a software developer who enjoys help others bring their project ideas to life.
+      
+      Welcome! My name is Abigail, I'm a software developer who enjoys being able to bring ideas to life, and help others boost their projects. 
+      --
+      I'm mostly interested in project management and web development but I'm excited to keep learning anything that would be helpful in my professional development journey.
+      I'm mostly interested in project management and web development, I'm excited to learn whatever would be useful for my professional development journey. 
+      I'm mostly interested in project management and web development, but I'm excited to learn whatever would be helpful to acheive my goals.
+      %>
       <div class="col-md-8 card-body">
-        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At urna condimentum mattis pellentesque. Sed nisi lacus sed viverra tellus in hac habitasse platea. Nulla posuere sollicitudin aliquam ultrices sagittis orci a scelerisque. Malesuada fames ac turpis egestas. Nibh nisl condimentum id venenatis. Augue lacus viverra vitae congue eu consequat. 
-        Sapien nec sagittis aliquam malesuada bibendum arcu vitae elementum.</p>
+        <p class="card-text">
+          Welcome! My name is Abigail, I'm a software developer who enjoys helping others boost their project ideas.
+          <br>
+          My experience for the time being has mostly been creating applications for small businesses, like an e-commerce website and inventory management system.
+          I'm mostly interested in web development, interface design and project management. I'm excited to keep learning new technologies to complement and enhance the projects I work on.
+          <br><br>
+          Whether it is to start or scale up a project I would love to team up with you to make it happen. If I can be of assistance, please don't hesitate to contact me.
+        </p>
 
-        <p>
+        <p class="d-flex justify-content-between">
           <button
-            class="btn btn-primary"
+            class="btn btn-info m-1"
             type="button"
+            style="width:100%"
             data-toggle="collapse"
             data-target="#jobHistory"
             aria-expanded="false"
             aria-controler="jobHistory"
           >
-            Job History
+            Experience
           </button>
-
+          
           <button
-            class="btn btn-primary"
+            class="btn btn-info m-1"
             type="button"
+            style="width:100%"
             data-toggle="collapse"
             data-target="#education"
             aria-expanded="false"
@@ -56,20 +74,38 @@
 
         <p>
           <div class="collapse" id="jobHistory">
-            <div class="card card-block">
-              Jooobs :(
+            <div class="card card-block p-2">
+              <span class="font-weight-bold">Freelance Work:</span> Developing an e-commerce website for Ventas Gerizim business. 
+              <span class="font-weight-bold">Role:</span> Fullstack developer. 
+              <span class="font-weight-bold">Technologies:</span> Laravel 8, MySql, Apache.
             </div>
-            <div class="card card-block">
-              Jooobs :(
+            <div class="card card-block p-2">
+              <span class="font-weight-bold">Intern Student:</span> Improving and correcting existing functionality in a specific module for MOPT in collaboration with an engineer at the institution.
+              <span class="font-weight-bold">Role:</span> Backend developer. 
+              <span class="font-weight-bold">Technologies:</span> ASP.NET, SQL Server.
             </div>
           </div>
 
           <div class="collapse" id="education">
-            <div class="card card-block">
-              School 1
+            <div class="card card-block p-2">
+              Systems Engineering Bachelor's Degree <br>
+              <span class="font-weight-bold">Universidad Nacional de Costa Rica.</span>
             </div>
-            <div class="card card-block">
-              School 2
+            <div class="card card-block p-2">
+              IT Applications Development Diploma <br>
+              <span class="font-weight-bold">Universidad Nacional de Costa Rica.</span>
+            </div>
+            <div class="card card-block p-2">
+              UX: Master on Web Design and User Experience
+              <span class="font-weight-bold">Udemy</span>
+            </div>
+            <div class="card card-block p-2">
+              Dissecting Ruby on Rails 5 
+              <span class="font-weight-bold">Udemy</span>
+            </div>
+            <div class="card card-block p-2">
+              Intermediate Level English Certificates
+              <span class="font-weight-bold">CaRob Institute</span>
             </div>
           </div>
         </p>

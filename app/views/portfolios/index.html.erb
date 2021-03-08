@@ -1,8 +1,13 @@
 <div class="album py-5 bg-light">
   <div class="container">
     <%= source_helper("alert alert-warning") %>
+    <% if logged_in?(:site_admin) %>
+      <div class="my-4">
+        <%=  link_to "New Portfolio Item", new_portfolio_path(@portf_items), class: 'btn btn-primary btn-block' %>
+      </div>
+    <% end %>
     <div class="row <%= "sortable" if logged_in?(:site_admin) %>">
-
+      
       <%= render partial: 'portf_item', collection: @portf_items %>
     
     </div>
