@@ -15,7 +15,7 @@ class BlogsController < ApplicationController
         flash.now[:notice] = 'No blogs published yet'
       end
     end
-    @page_title = "My Portfolio Blog"
+    @page_title = "DevelopExp Blog"
   end
 
   # GET /blogs/1
